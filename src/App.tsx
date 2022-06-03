@@ -5,7 +5,6 @@ import { MovieCardList } from './component/MovieCardList/MovieCardList';
 import { MovieSearchInput } from './component/MovieSearchInput/MovieSearchInput';
 import {testMovies} from './App.data';
 
-
 function App() {
   return (
     <div className="App">
