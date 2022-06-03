@@ -1,5 +1,5 @@
 import React from 'react';
-import './App.css';
+import './App.scss';
 import {AppHeader} from './component/AppHeader/AppHeader';
 import { MovieCardList } from './component/MovieCardList/MovieCardList';
 import { MovieSearchInput } from './component/MovieSearchInput/MovieSearchInput';
@@ -9,10 +9,10 @@ function App() {
   return (
     <div className="App">
       <AppHeader/>
-      <div>
+      <div className="AppSearchSection">
         <MovieSearchInput/>
       </div>
-      <div>
+      <div className="AppMovieSection">
         <MovieCardList movies={testMovies}/>
       </div>
     </div>

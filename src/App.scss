@@ -1,0 +1,14 @@
+.App{
+  color:black;
+  font-family: Arial, Helvetica, sans-serif;
+  .App-header{
+    background-color: black;
+
+  }
+  .AppSearchSection,.AppMovieSection{
+    padding:1rem 10% 1rem 10%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}
