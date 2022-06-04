@@ -8,7 +8,7 @@ import { ErrorMessage } from './component/ErrorMessage/ErrorMessage';
 import { WelcomeMessage } from './component/WelcomeMessage/WelcomeMessage';
 
 const initialState = {
-  isLoading:true,
+  isLoading:false,
   movies:[],
   errorMessage:null
 }

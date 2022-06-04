@@ -11,4 +11,12 @@
     align-items: center;
     justify-content: center;
   }
+  .AppSearchSection{
+    background-color: black;
+  }
+  .AppMovieSection{
+    background-image: url(./asset/image/welcomeBg.jpg);
+    background-size:cover;
+    min-height: 80vh;
+  }
 }
