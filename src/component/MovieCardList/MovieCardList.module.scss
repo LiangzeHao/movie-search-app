@@ -1,12 +1,20 @@
-.list{
-    display: inline-flex;
-    flex-wrap: wrap;
-    margin:auto;
-    justify-content: center;
-    width:90%;
-    max-width:66rem;
-    &>div{
-        margin-right:1rem;
-        margin-bottom: 2rem;
+.section{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    .searchMessage{
+        color:white;
+    }
+    .list{
+        display: inline-flex;
+        flex-wrap: wrap;
+        margin:auto;
+        justify-content: center;
+        width:90%;
+        max-width:66rem;
+        &>div{
+            margin-right:1rem;
+            margin-bottom: 2rem;
+        }
     }
 }

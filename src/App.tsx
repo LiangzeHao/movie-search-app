@@ -15,6 +15,8 @@ library.add(fas)
 const initialState = {
   isLoading:false,
   movies:testMovies,
+  totalResults:0,
+  searchKeyword:'',
   errorMessage:null
 }
 
@@ -30,7 +32,9 @@ const reducer = (state:any,action:any) =>{
       return{
         ...state,
         isLoading:false,
-        movies:action.payload
+        movies:action.payload.movies,
+        totalResults:action.payload.totalResults,
+        searchKeyword:action.payload.searchKeyword
       };
     case "SEARCH_MOVIES_FAILURE":
       return{
@@ -52,7 +56,11 @@ const App = () => {
       if(jsonResponse.Response === 'True'){
         dispatch({
           type: "SEARCH_MOVIES_SUCCESS",
-          payload:jsonResponse.Search
+          payload:{
+            movies:jsonResponse.Search,
+            searchKeyword:searchKeyword,
+            totalResults:jsonResponse.totalResults
+          }
         });
       } else {
         dispatch({
@@ -63,7 +71,7 @@ const App = () => {
     });
   },[])
   
-  const { movies, errorMessage, isLoading } = state;
+  const { movies, errorMessage, isLoading, totalResults, searchKeyword } = state;
   
   return (
     <div className="App">
@@ -79,7 +87,7 @@ const App = () => {
         ): movies.length===0 ?(
           <WelcomeMessage/>
         ):(
-          <MovieCardList movies={movies}/>
+          <MovieCardList movies={movies} totalResults={totalResults} searchKeyword={searchKeyword}/>
         )}
       </div>
     </div>
