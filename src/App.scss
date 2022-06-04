@@ -6,7 +6,8 @@
 
   }
   .AppSearchSection,.AppMovieSection{
-    padding:1rem 10% 1rem 10%;
+    padding:1rem 0;
+    width:100%;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -18,7 +19,5 @@
     background-image: url(./asset/image/welcomeBg.jpg);
     background-size:cover;
     min-height: 80vh;
-    display:flex;
-    justify-content: center;
   }
 }

@@ -1,6 +1,9 @@
 .list{
-    display:flex;
+    display: inline-flex;
     flex-wrap: wrap;
+    margin:auto;
+    justify-content: center;
+    width:90%;
     max-width:66rem;
     &>div{
         margin-right:1rem;
