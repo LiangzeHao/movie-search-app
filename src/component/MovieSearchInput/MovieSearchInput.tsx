@@ -16,10 +16,11 @@ export const MovieSearchInput:React.FC<Props> = ({onSearch}) =>{
         }
     }
     return(
-        <div>
+        <div className={s.input}>
             <input
                 value={searchKeyword}
                 onChange={handleOnInputChange}
+                placeholder={"Enter your movie keywords here"}
                 type="text"
             />
             <button

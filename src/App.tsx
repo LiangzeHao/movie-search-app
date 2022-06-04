@@ -6,6 +6,10 @@ import { MovieSearchInput } from './component/MovieSearchInput/MovieSearchInput'
 import { LoadingMessage } from './component/LoadingMessage/LoadingMessage';
 import { ErrorMessage } from './component/ErrorMessage/ErrorMessage';
 import { WelcomeMessage } from './component/WelcomeMessage/WelcomeMessage';
+import { library } from '@fortawesome/fontawesome-svg-core'
+import { fas } from '@fortawesome/free-solid-svg-icons'
+
+library.add(fas)
 
 const initialState = {
   isLoading:false,

@@ -7,6 +7,10 @@ interface Props{
 
 export const ErrorMessage:React.FC<Props> = ({error}) => {
     return(
-        <p>{error}</p>
+        <div className={s.message}>
+            <p>Ops, Something went wrong.</p>
+            <p>{error}</p>
+            <p>Please try another search.</p>
+        </div>
     )
 }
