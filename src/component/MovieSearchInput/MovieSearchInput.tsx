@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import s from './MovieSearchInput.module.scss';
 
 interface Props{
@@ -6,7 +6,28 @@ interface Props{
 }
 
 export const MovieSearchInput:React.FC<Props> = ({onSearch}) =>{
+    const [searchKeyword,setSearchKeyword] = useState('');
+    const handleOnInputChange = (e:React.ChangeEvent<HTMLInputElement>) =>{
+        setSearchKeyword(e.target.value)
+    }
+    const handleOnSubmit = () =>{
+        if(searchKeyword!==''){
+            onSearch(searchKeyword)
+        }
+    }
     return(
-        <input/>
+        <div>
+            <input
+                value={searchKeyword}
+                onChange={handleOnInputChange}
+                type="text"
+            />
+            <button
+                onClick={handleOnSubmit}
+            >
+                Search
+            </button>
+        </div>
+
     )
 }

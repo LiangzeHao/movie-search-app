@@ -18,5 +18,7 @@
     background-image: url(./asset/image/welcomeBg.jpg);
     background-size:cover;
     min-height: 80vh;
+    display:flex;
+    justify-content: center;
   }
 }

@@ -1,4 +1,4 @@
-import React,{useReducer} from 'react';
+import React,{useCallback, useReducer} from 'react';
 import './App.scss';
 import {AppHeader} from './component/AppHeader/AppHeader';
 import { MovieCardList } from './component/MovieCardList/MovieCardList';
@@ -39,7 +39,7 @@ const reducer = (state:any,action:any) =>{
 const App = () => {
   const [state,dispatch] = useReducer(reducer,initialState);
 
-  const handleOnSearch = (searchKeyword:String) =>{
+  const handleOnSearch = useCallback((searchKeyword:String) =>{
     dispatch(({type:"SEARCH_MOVIES_REQUEST"}));
     fetch(`https://www.omdbapi.com/?s=${searchKeyword}&apikey=9b0b0a6f`)
     .then(response => response.json())
@@ -56,7 +56,7 @@ const App = () => {
         });
       }
     });
-  }
+  },[])
   
   const { movies, errorMessage, isLoading } = state;
   
