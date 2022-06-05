@@ -18,4 +18,18 @@
             margin-bottom: 2rem;
         }
     }
+    .pagination{
+        button{
+            color:white;
+            &:hover,&:global(.Mui-selected){
+                background-color: #b92a26;
+            }
+        }
+        li{
+            border:none;
+            div{
+                color:white;
+            }
+        }
+    }
 }
