@@ -1,6 +1,8 @@
 .input{
     border-radius: 10px;
     overflow: hidden;
+    display: flex;
+    align-items: center;
     input{
         padding:0.5rem 0.8rem;
         font-size: 1.2rem;
@@ -13,5 +15,23 @@
         background-color: #b92a26;
         color:white;
         border:2px solid #b92a26;
+    }
+}
+@media (max-width: 768px){
+    .input{
+        width:90%;
+        input{
+            flex:1;
+        }
+        button{
+            width:6rem;
+        }
+    }
+}
+
+@media (max-width: 425px){
+    .input{
+        width:100%;
+        border-radius: 0px;
     }
 }
