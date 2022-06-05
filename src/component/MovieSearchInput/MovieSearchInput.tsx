@@ -20,7 +20,7 @@ export const MovieSearchInput:React.FC<Props> = ({onSearch}) =>{
             <input
                 value={searchKeyword}
                 onChange={handleOnInputChange}
-                placeholder={"Enter your movie keywords here"}
+                placeholder={"Enter your movie keywords"}
                 type="text"
             />
             <button
