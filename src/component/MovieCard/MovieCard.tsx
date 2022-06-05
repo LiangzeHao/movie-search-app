@@ -95,7 +95,7 @@ export const MovieCard:React.FC<Props> = ({movie}) =>{
                             <p className={s.tag}>Genre</p>
                             <Stack direction="row" className={s.genreStack}>
                                 {movieDetail.Genre.map((genreItem:String,index:number)=>(
-                                    <Chip label={genreItem} color={"error"} key={index}/>
+                                    <Chip label={genreItem} key={index}/>
                                 ))}
                             </Stack>
                         </div>

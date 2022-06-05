@@ -14,7 +14,8 @@ const initialState = {
   movies:[],
   totalResults:0,
   searchKeyword:'',
-  errorMessage:null
+  errorMessage:null,
+  page:1
 }
 
 // Define reducer to handle search movies request 
@@ -32,7 +33,8 @@ const reducer = (state:any,action:any) =>{
         isLoading:false,
         movies:action.payload.movies,
         totalResults:action.payload.totalResults,
-        searchKeyword:action.payload.searchKeyword
+        searchKeyword:action.payload.searchKeyword,
+        page:action.payload.page
       };
     case "SEARCH_MOVIES_FAILURE":
       return{
@@ -47,9 +49,9 @@ const App = () => {
   const [state,dispatch] = useReducer(reducer,initialState);
 
   // Define function that fetch data from omdb by search keyword and store data into store
-  const handleOnSearch = useCallback((searchKeyword:String) =>{
+  const handleOnSearch = useCallback((searchKeyword:String,page:number=1) =>{
     dispatch(({type:"SEARCH_MOVIES_REQUEST"}));
-    fetch(`https://www.omdbapi.com/?s=${searchKeyword}&apikey=9b0b0a6f`)
+    fetch(`https://www.omdbapi.com/?s=${searchKeyword}&apikey=9b0b0a6f&page=${page}`)
     .then(response => response.json())
     .then(jsonResponse => {
       if(jsonResponse.Response === 'True'){
@@ -58,7 +60,8 @@ const App = () => {
           payload:{
             movies:jsonResponse.Search,
             searchKeyword:searchKeyword,
-            totalResults:jsonResponse.totalResults
+            totalResults:jsonResponse.totalResults,
+            page:page
           }
         });
       } else {
@@ -70,7 +73,12 @@ const App = () => {
     });
   },[])
   
-  const { movies, errorMessage, isLoading, totalResults, searchKeyword } = state;
+  // When pagination number changes, search movies based on new pagination number
+  const handleOnPageChange = ( event: React.ChangeEvent<unknown>, page: number)=>{
+    handleOnSearch(searchKeyword,page)
+  }
+
+  const { movies, errorMessage, isLoading, totalResults, searchKeyword, page } = state;
   
   return (
     <div className="App">
@@ -86,7 +94,13 @@ const App = () => {
         ): movies.length===0 ?(
           <WelcomeMessage/>
         ):(
-          <MovieCardList movies={movies} totalResults={totalResults} searchKeyword={searchKeyword}/>
+          <MovieCardList 
+            movies={movies} 
+            totalResults={totalResults} 
+            searchKeyword={searchKeyword}
+            onPageChange={handleOnPageChange}
+            page={page}  
+          />
         )}
       </div>
     </div>

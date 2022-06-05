@@ -1,9 +1,9 @@
 .App{
   color:black;
   font-family: Arial, Helvetica, sans-serif;
+
   .App-header{
     background-color: black;
-
   }
   .AppSearchSection,.AppMovieSection{
     padding:1rem 0;
@@ -17,6 +17,8 @@
   }
   .AppMovieSection{
     background-image: url(./asset/image/welcomeBg.jpg);
+    padding-bottom:10vh;
+    box-sizing: border-box;
     background-size:cover;
     min-height: 80vh;
     flex-direction: column;

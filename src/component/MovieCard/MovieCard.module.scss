@@ -74,6 +74,8 @@
             div{
                 border-radius: 7px;
                 height:20px;
+                background-color: #b92a26;
+                color:#fff;
                 span{
                     font-size: smaller;
                 }
@@ -90,6 +92,7 @@
     &.isOpen{
         .movieInfo{
             height:20rem;
+            overflow-y: scroll;
         }
     }
 }
