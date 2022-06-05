@@ -23,6 +23,7 @@
         align-items: center;
         height:7.2rem;
         width:100%;
+        box-sizing: border-box;
         z-index: 1;
         background-color: white;
         transition: height 300ms;
@@ -58,6 +59,7 @@
         }
     }
     .movieInfo{
+        padding:0 5px;
         .tag{
             font-weight: 600;
             margin-bottom: 5px;
@@ -67,7 +69,6 @@
             width:100%;
             margin-top:8px;
             font-size: small;
-            padding:0 5px;
         }
         .genreStack{
             flex-wrap: wrap;
@@ -93,6 +94,12 @@
         .movieInfo{
             height:20rem;
             overflow-y: scroll;
+            scrollbar-width: none; /* Firefox */
+            -ms-overflow-style: none;  /* Internet Explorer 10+ */
+            &::-webkit-scrollbar { /* WebKit */
+                width: 0;
+                height: 0;
+            }
         }
     }
 }
