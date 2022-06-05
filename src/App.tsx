@@ -6,12 +6,9 @@ import { MovieSearchInput } from './component/MovieSearchInput/MovieSearchInput'
 import { LoadingMessage } from './component/LoadingMessage/LoadingMessage';
 import { ErrorMessage } from './component/ErrorMessage/ErrorMessage';
 import { WelcomeMessage } from './component/WelcomeMessage/WelcomeMessage';
-import { library } from '@fortawesome/fontawesome-svg-core'
-import { fas } from '@fortawesome/free-solid-svg-icons'
 import {testMovies} from './App.data';
 
-library.add(fas)
-
+// Define initial state for movies reducer
 const initialState = {
   isLoading:false,
   movies:testMovies,
@@ -20,6 +17,7 @@ const initialState = {
   errorMessage:null
 }
 
+// Define reducer to handle search movies request 
 const reducer = (state:any,action:any) =>{
   switch(action.type){
     case "SEARCH_MOVIES_REQUEST":
@@ -48,6 +46,7 @@ const reducer = (state:any,action:any) =>{
 const App = () => {
   const [state,dispatch] = useReducer(reducer,initialState);
 
+  // Define function that fetch data from omdb by search keyword and store data into store
   const handleOnSearch = useCallback((searchKeyword:String) =>{
     dispatch(({type:"SEARCH_MOVIES_REQUEST"}));
     fetch(`https://www.omdbapi.com/?s=${searchKeyword}&apikey=9b0b0a6f`)

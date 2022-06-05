@@ -5,6 +5,7 @@
     justify-content: space-between;
     background-color: white;
     width:12rem;
+    height:25rem;
     border-radius: 10px;
     border:1px solid black;
     overflow: hidden;
@@ -13,32 +14,55 @@
         width:12rem;
         height: 17.8rem;
     }
-    p{
-        margin:0;
-        &.title{
-            font-weight: 600;
-            text-align: center;
-            margin-top:10px;
+    .movieInfo{
+        position: absolute;
+        bottom:0;
+        left:0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        height:7.2rem;
+        width:100%;
+        z-index: 1;
+        background-color: white;
+        transition: height 300ms;
+        p{
+            margin:0;
+            &.title{
+                font-weight: 600;
+                text-align: center;
+                margin-top:10px;
+            }
+            &.year{
+                color:gray;
+                margin-top:5px;
+            }
         }
-        &.year{
-            color:gray;
+        .detailButton{
+            width:5rem;
+            margin-top:auto;
             margin-bottom:10px;
+            padding:5px 10px;
+            cursor: pointer;
+            color:#b92a26;
+            border-radius: 7px;
+            border:1px solid #b92a26;
+            box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease 0s;
+            &:hover {
+                background-color: #b92a26;
+                box-shadow: 0px 5px 8px rgba(185,42,38, 0.4);
+                color: #fff;
+                transform: translateY(-5px);
+              }
         }
     }
-    button{
-        margin-bottom:10px;
-        padding:5px 10px;
-        cursor: pointer;
-        color:#b92a26;
-        border-radius: 7px;
-        border:1px solid #b92a26;
-        box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
-        transition: all 0.3s ease 0s;
-        &:hover {
-            background-color: #b92a26;
-            box-shadow: 0px 5px 8px rgba(185,42,38, 0.4);
-            color: #fff;
-            transform: translateY(-5px);
-          }
+    .movieInfo{
+        
+    }
+    &.isOpen{
+        .movieInfo{
+            height:20rem;
+        }
     }
 }
