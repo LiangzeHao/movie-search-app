@@ -58,7 +58,34 @@
         }
     }
     .movieInfo{
-        
+        .tag{
+            font-weight: 600;
+            margin-bottom: 5px;
+        }
+        .date,.genre,.director,.rating{
+            box-sizing: border-box;
+            width:100%;
+            margin-top:8px;
+            font-size: small;
+            padding:0 5px;
+        }
+        .genreStack{
+            flex-wrap: wrap;
+            div{
+                border-radius: 7px;
+                height:20px;
+                span{
+                    font-size: smaller;
+                }
+                margin-bottom:5px;
+                margin-right:5px;
+            }
+        }
+        .imdbRating{
+            font-size: medium;
+            color:#b92a26;
+            font-weight: 600;
+        }
     }
     &.isOpen{
         .movieInfo{

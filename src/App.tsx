@@ -11,7 +11,7 @@ import {testMovies} from './App.data';
 // Define initial state for movies reducer
 const initialState = {
   isLoading:false,
-  movies:testMovies,
+  movies:[],
   totalResults:0,
   searchKeyword:'',
   errorMessage:null

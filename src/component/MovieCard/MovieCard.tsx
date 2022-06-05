@@ -88,24 +88,24 @@ export const MovieCard:React.FC<Props> = ({movie}) =>{
                 {isDetailOpen && Object.keys(movieDetail).length !== 0 &&(
                     <Fragment>
                         <div className={s.date}>
-                            <p>Release Date</p>
+                            <p className={s.tag}>Release Date</p>
                             <p>{movieDetail.Released}</p>
                         </div>
                         <div className={s.genre}>
-                            <p>Genre</p>
-                            <Stack direction="row" spacing={1}>
+                            <p className={s.tag}>Genre</p>
+                            <Stack direction="row" className={s.genreStack}>
                                 {movieDetail.Genre.map((genreItem:String,index:number)=>(
                                     <Chip label={genreItem} color={"error"} key={index}/>
                                 ))}
                             </Stack>
                         </div>
                         <div className={s.director}>
-                            <p>Director</p>
+                            <p className={s.tag}>Director</p>
                             <p>{movieDetail.Director}</p>
                         </div>
                         <div className={s.rating}>
-                            <p>IMDB Rating</p>
-                            <p>{movieDetail.imdbRating}</p>
+                            <p className={s.tag}>IMDB Rating</p>
+                            <p className={s.imdbRating}>{movieDetail.imdbRating}</p>
                         </div>
                     </Fragment>
                 )}
