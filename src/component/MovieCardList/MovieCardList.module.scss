@@ -1,9 +1,10 @@
+@import'../../App.scss';
+
 .section{
     display: flex;
     align-items: center;
     flex-direction: column;
     .searchMessage,.showMessage{
-        color:white;
         font-size:1.2rem;
         margin-top:0;
         margin-bottom:1rem;
@@ -11,26 +12,26 @@
     .list{
         display: inline-flex;
         flex-wrap: wrap;
-        margin:auto;
         justify-content: center;
         width:90%;
-        max-width:66rem;
+        max-width:66rem; /* Set list max width to allow maximum 4 cards in a row of list */
+        margin:auto;
         &>div{
             margin-right:1rem;
             margin-bottom: 2rem;
         }
     }
-    .pagination{
+    .pagination{    /* Set Mui pagination with theme color*/
         button{
-            color:white;
+            color:$color-text;
             &:hover,&:global(.Mui-selected){
-                background-color: #b92a26;
+                background-color: $color-theme;
             }
         }
         li{
             border:none;
             div{
-                color:white;
+                color:$color-text;
             }
         }
     }

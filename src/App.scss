@@ -1,8 +1,11 @@
+$color-theme: #b92a26;
+$color-text:#fff;
+
 .App{
-  color:black;
+  color:$color-text;
   font-family: Arial, Helvetica, sans-serif;
   overflow: hidden;
-  .App-header{
+  .App-header,.AppSearchSection{
     background-color: black;
   }
   .AppSearchSection,.AppMovieSection{
@@ -12,15 +15,12 @@
     align-items: center;
     justify-content: center;
   }
-  .AppSearchSection{
-    background-color: black;
-  }
   .AppMovieSection{
-    background-image: url(./asset/image/welcomeBg.jpg);
-    padding-bottom:10vh;
     box-sizing: border-box;
-    background-size:cover;
+    padding-bottom:10vh;
     min-height: 80vh;
+    background-image: url(./asset/image/welcomeBg.jpg);
+    background-size:cover;
     flex-direction: column;
   }
 }

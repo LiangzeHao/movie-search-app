@@ -1,13 +1,16 @@
+@import'../../App.scss';
+
 .card{
     display:flex;
     flex-direction: column;
     align-items: center;
     justify-content: space-between;
-    background-color: white;
     width:12rem;
     height:25rem;
     border-radius: 10px;
     border:1px solid black;
+    background-color: #fff;
+    color: black;
     overflow: hidden;
     position: relative;
     img{
@@ -26,7 +29,7 @@
         box-sizing: border-box;
         z-index: 1;
         background-color: white;
-        transition: height 300ms;
+        transition: height 300ms; /* Add expansion animation for movie info*/
         p{
             margin:0;
             &.title{
@@ -45,17 +48,17 @@
             margin-bottom:10px;
             padding:5px 10px;
             cursor: pointer;
-            color:#b92a26;
+            color:$color-theme;
             border-radius: 7px;
-            border:1px solid #b92a26;
+            border:1px solid $color-theme;
             box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
             transition: all 0.3s ease 0s;
             &:hover {
-                background-color: #b92a26;
+                background-color: $color-theme;
                 box-shadow: 0px 5px 8px rgba(185,42,38, 0.4);
-                color: #fff;
+                color: $color-text;
                 transform: translateY(-5px);
-              }
+            }
         }
     }
     .movieInfo{
@@ -76,8 +79,8 @@
             div{
                 border-radius: 7px;
                 height:20px;
-                background-color: #b92a26;
-                color:#fff;
+                background-color: $color-theme;
+                color:$color-text;
                 span{
                     font-size: smaller;
                 }
@@ -87,14 +90,15 @@
         }
         .imdbRating{
             font-size: medium;
-            color:#b92a26;
+            color:$color-theme;
             font-weight: 600;
         }
     }
     &.isOpen{
         .movieInfo{
             height:20rem;
-            overflow-y: scroll;
+            overflow-y: scroll; /* Make movie info scrollable on overflow content */
+            /* Remove scroll bar for different browsers */
             scrollbar-width: none; /* Firefox */
             -ms-overflow-style: none;  /* Internet Explorer 10+ */
             &::-webkit-scrollbar { /* WebKit */
